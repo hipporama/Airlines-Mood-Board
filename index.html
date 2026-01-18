@@ -9,8 +9,8 @@
            CSS CUSTOM PROPERTIES - BRAND COLORS
            ============================================ */
         :root {
-            --dark-blue: #1a2942;
-            --yellow-gold: #d4a84b;
+            --dark-blue: #1e4493;
+            --yellow-gold: #d4a41c;
             --mud-brown: #6b4423;
             --forest-green: #2d4a3e;
             --cream: #f8f5f0;
@@ -395,7 +395,7 @@
         .overview-card {
             padding: 2.5rem;
             background: var(--cream);
-            border-radius: 4px;
+            border-radius: 12px;
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -412,7 +412,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            border-radius: 4px 4px 0 0;
+            border-radius: 12px 12px 0 0;
         }
 
         .overview-card:nth-child(1)::before { background: var(--yellow-gold); }
@@ -478,7 +478,7 @@
         .theme-column {
             padding: 2.5rem;
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 4px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -551,7 +551,7 @@
             letter-spacing: 0.3em;
             text-transform: uppercase;
             padding: 0.75rem 1.5rem;
-            border-radius: 2px;
+            border-radius: 12px;
             margin-bottom: 1.5rem;
         }
 
@@ -618,23 +618,101 @@
             color: var(--dark-blue);
         }
 
-        /* Slide 1: Color Palette & Photo Grid */
-        .palette-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .color-swatches {
+        /* Slide 1: Colour Palette & Photo Grid - Editorial Layout */
+        .palette-section {
             display: flex;
             flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .colour-swatches {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
         }
 
+        .swatch {
+            height: 70px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .swatch:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(26, 41, 66, 0.15);
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1.5fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+            height: 500px;
+        }
+
+        .colour-palette-column {
+            grid-row: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .colour-palette-column .swatch {
+            height: auto;
+        }
+
+        .photo-frame {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(26, 41, 66, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.015);
+            box-shadow: 0 12px 36px rgba(26, 41, 66, 0.12);
+        }
+
+        .photo-frame.portrait {
+            grid-row: span 2;
+        }
+
+        .mood-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder-frame {
+            background: linear-gradient(135deg, #e8e4de 0%, #d8d4ce 100%);
+            border: 2px dashed rgba(26, 41, 66, 0.2);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .placeholder-text {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* Legacy support */
+        .color-swatches {
+            display: flex;
+            gap: 1rem;
+            flex: 1;
+        }
+
         .swatch-placeholder {
+            flex: 1;
             height: 80px;
-            border-radius: 4px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -644,11 +722,20 @@
             color: var(--text-muted);
             background: linear-gradient(135deg, #e8e4de 0%, #d8d4ce 100%);
             border: 2px dashed rgba(26, 41, 66, 0.2);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .swatch-placeholder:hover {
-            transform: scale(1.02);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(26, 41, 66, 0.12);
+        }
+
+        /* Legacy support for placeholder grids */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .photo-grid {
@@ -661,7 +748,7 @@
         .photo-placeholder {
             background: linear-gradient(135deg, #e8e4de 0%, #d8d4ce 100%);
             border: 2px dashed rgba(26, 41, 66, 0.2);
-            border-radius: 4px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -682,30 +769,30 @@
         }
 
         .book-reference {
-            padding: 2rem;
-            background: var(--dark-blue);
-            border-radius: 4px;
-            color: var(--warm-white);
+            margin-top: 1.5rem;
         }
 
         .book-reference h4 {
-            color: var(--yellow-gold);
+            color: var(--text-muted);
             margin-bottom: 1rem;
             font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .book-placeholder {
             height: 120px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px dashed rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
+            background: linear-gradient(135deg, #e8e4de 0%, #d8d4ce 100%);
+            border: 2px dashed rgba(26, 41, 66, 0.2);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.75rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--text-muted);
         }
 
         /* Slide 2: Quote Page Layout */
@@ -719,7 +806,7 @@
             padding: 2rem;
             background: var(--warm-white);
             border: 1px solid rgba(26, 41, 66, 0.1);
-            border-radius: 4px;
+            border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -740,7 +827,7 @@
             min-height: 200px;
             background: linear-gradient(135deg, #f5f2ed 0%, #ebe7e0 100%);
             border: 2px dashed rgba(26, 41, 66, 0.15);
-            border-radius: 4px;
+            border-radius: 12px;
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
@@ -775,7 +862,7 @@
             padding: 2.5rem;
             background: var(--warm-white);
             border: 1px solid rgba(26, 41, 66, 0.1);
-            border-radius: 4px;
+            border-radius: 12px;
         }
 
         .typeface-label {
@@ -790,7 +877,7 @@
             min-height: 180px;
             background: linear-gradient(135deg, #f5f2ed 0%, #ebe7e0 100%);
             border: 2px dashed rgba(26, 41, 66, 0.15);
-            border-radius: 4px;
+            border-radius: 12px;
             padding: 2rem;
             display: flex;
             flex-direction: column;
@@ -828,7 +915,7 @@
         .layout-card {
             background: var(--warm-white);
             border: 1px solid rgba(26, 41, 66, 0.1);
-            border-radius: 4px;
+            border-radius: 12px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -1098,14 +1185,38 @@
                 padding: 1.5rem;
             }
 
-            .color-swatches {
-                flex-direction: row;
-                flex-wrap: wrap;
+            .colour-swatches {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .swatch-placeholder {
-                flex: 1 1 45%;
-                height: 60px;
+            .swatch {
+                height: 50px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+                gap: 1rem;
+            }
+
+            .colour-palette-column {
+                grid-row: span 1;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr;
+            }
+
+            .colour-palette-column .swatch {
+                height: 50px;
+            }
+
+            .photo-frame.portrait {
+                grid-row: span 1;
+            }
+
+            .mood-image {
+                height: auto;
+                object-fit: cover;
             }
         }
 
@@ -1159,10 +1270,6 @@
 
             .layout-info {
                 padding: 1rem;
-            }
-
-            .book-reference {
-                padding: 1.25rem;
             }
 
             .book-placeholder {
@@ -1319,28 +1426,30 @@
             <div class="mood-board-header reveal">
                 <span class="mood-board-label">Option One</span>
                 <h2 class="serif">Mood Board Template A</h2>
-                <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">A visual direction template ready for customization with specific colors, photographs, and typefaces.</p>
+                <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">A visual direction template ready for customisation with specific colours, photographs, and typefaces.</p>
             </div>
 
-            <!-- Slide 1: Color Palette & Photo Grid -->
+            <!-- Slide 1: Colour Palette & Visual References -->
             <div class="mood-slide reveal">
                 <div class="slide-header">
                     <span class="slide-number">1</span>
-                    <span class="slide-title">Color Palette & Visual References</span>
+                    <span class="slide-title">Colour Palette & Visual References</span>
                 </div>
-                <div class="palette-grid">
-                    <div class="color-swatches">
-                        <div class="swatch-placeholder">Primary Color</div>
-                        <div class="swatch-placeholder">Secondary Color</div>
-                        <div class="swatch-placeholder">Accent Color</div>
-                        <div class="swatch-placeholder">Neutral Tone</div>
+                <div class="photo-gallery">
+                    <div class="colour-palette-column">
+                        <div class="swatch" style="background: var(--dark-blue);"></div>
+                        <div class="swatch" style="background: var(--yellow-gold);"></div>
+                        <div class="swatch" style="background: var(--mud-brown);"></div>
+                        <div class="swatch" style="background: var(--forest-green);"></div>
                     </div>
-                    <div class="photo-grid">
-                        <div class="photo-placeholder large">Hero Image Placeholder</div>
-                        <div class="photo-placeholder">Photo 1</div>
-                        <div class="photo-placeholder">Photo 2</div>
-                        <div class="photo-placeholder">Photo 3</div>
-                        <div class="photo-placeholder">Photo 4</div>
+                    <div class="photo-frame portrait">
+                        <img src="file:///C:/Users/arvma/OneDrive/Desktop/DSC07456.JPG" alt="Photo" class="mood-image">
+                    </div>
+                    <div class="photo-frame">
+                        <img src="file:///C:/Users/arvma/OneDrive/Desktop/AIrlines.jpg" alt="Airlines" class="mood-image">
+                    </div>
+                    <div class="photo-frame">
+                        <img src="file:///C:/Users/arvma/OneDrive/Desktop/trees.jpg" alt="Trees" class="mood-image">
                     </div>
                 </div>
                 <div class="book-reference">
@@ -1485,25 +1594,29 @@
                 <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">An alternative visual direction template for comparison - same structure, different content.</p>
             </div>
 
-            <!-- Slide 1: Color Palette & Photo Grid -->
+            <!-- Slide 1: Colour Palette & Visual References -->
             <div class="mood-slide reveal">
                 <div class="slide-header">
                     <span class="slide-number">1</span>
-                    <span class="slide-title">Color Palette & Visual References</span>
+                    <span class="slide-title">Colour Palette & Visual References</span>
                 </div>
-                <div class="palette-grid">
-                    <div class="color-swatches">
-                        <div class="swatch-placeholder">Primary Color</div>
-                        <div class="swatch-placeholder">Secondary Color</div>
-                        <div class="swatch-placeholder">Accent Color</div>
-                        <div class="swatch-placeholder">Neutral Tone</div>
+                <div class="palette-section">
+                    <div class="colour-swatches">
+                        <div class="swatch" style="background: var(--dark-blue);"></div>
+                        <div class="swatch" style="background: var(--yellow-gold);"></div>
+                        <div class="swatch" style="background: var(--mud-brown);"></div>
+                        <div class="swatch" style="background: var(--forest-green);"></div>
                     </div>
-                    <div class="photo-grid">
-                        <div class="photo-placeholder large">Hero Image Placeholder</div>
-                        <div class="photo-placeholder">Photo 1</div>
-                        <div class="photo-placeholder">Photo 2</div>
-                        <div class="photo-placeholder">Photo 3</div>
-                        <div class="photo-placeholder">Photo 4</div>
+                    <div class="photo-gallery">
+                        <div class="photo-frame photo-placeholder-frame">
+                            <div class="placeholder-text">Photo 1</div>
+                        </div>
+                        <div class="photo-frame photo-placeholder-frame">
+                            <div class="placeholder-text">Photo 2</div>
+                        </div>
+                        <div class="photo-frame photo-placeholder-frame">
+                            <div class="placeholder-text">Photo 3</div>
+                        </div>
                     </div>
                 </div>
                 <div class="book-reference">
