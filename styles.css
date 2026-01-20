@@ -890,6 +890,7 @@
         }
 
         .typeface-sample .body-text {
+            font-family: 'Merriweather', Georgia, serif;
             font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.6;
