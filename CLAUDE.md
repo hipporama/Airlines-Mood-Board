@@ -19,22 +19,25 @@ No build process, compilation, or bundling required.
 
 ## Architecture
 
-**Single File Structure**: Everything is contained in `index.html`:
-- CSS styles: lines 8-1206 (embedded in `<style>` block)
-- HTML content: lines 1207-1650 (page structure)
-- JavaScript: lines 1651-1717 (embedded in `<script>` block)
+**File Structure**:
+- `index.html` - Main HTML document (~23KB)
+- `styles.css` - All CSS styles (~36KB)
+- `script.js` - JavaScript functionality (~3KB)
+- `fonts/` - Woff2 font files (Cormorant Garamond, Merriweather)
+- `images/` - Photo assets extracted from original
 
-**Fonts**: Cormorant Garamond and Merriweather are embedded as base64 - no external font requests.
+**Build Scripts** (for reference, not needed for normal development):
+- `build-split.js` - Script that was used to split the original monolithic HTML file
 
 ## CSS Custom Properties
 
 Brand colors defined in `:root`:
-- `--color-dark-blue`: Primary dark blue (#1a2a3a)
-- `--color-yellow-gold`: Accent gold (#c9a961)
-- `--color-mud-brown`: Brown tone (#6b5b4f)
-- `--color-forest-green`: Green accent (#2d4a3e)
-- `--color-cream`: Background cream (#faf6f0)
-- `--color-warm-white`: Light backgrounds (#fefefe)
+- `--dark-blue`: Primary dark blue (#1A365D)
+- `--yellow-gold`: Accent gold (#D4A84B)
+- `--mud-brown`: Brown tone (#6B4E31)
+- `--forest-green`: Green accent (#2D5A3D)
+- `--cream`: Background cream (#f8f5f0)
+- `--warm-white`: Light backgrounds (#fdfcfa)
 
 ## Page Sections
 
@@ -58,11 +61,11 @@ Brand colors defined in `:root`:
 
 ## Making Changes
 
-- **Add new sections**: Insert after the divider element around line 1312
-- **Extend mood boards**: Add slides within the existing template sections
-- **Modify colors**: Update CSS custom properties in `:root`
-- **Update navigation**: Edit navbar links and corresponding section IDs
-- **CSS sections**: Well-commented blocks for each component
+- **Styles**: Edit `styles.css` directly
+- **JavaScript**: Edit `script.js` directly
+- **HTML content**: Edit `index.html`
+- **Add images**: Place in `images/` folder and reference as `images/filename.jpg`
+- **Modify colors**: Update CSS custom properties in `:root` in `styles.css`
 
 ## Testing
 
