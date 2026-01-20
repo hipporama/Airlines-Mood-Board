@@ -472,10 +472,12 @@
         }
 
         .theme-column {
-            padding: 2.5rem;
+            padding: 2rem 3rem;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .theme-label {
@@ -483,7 +485,7 @@
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--yellow-gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .theme-column h3 {
@@ -498,7 +500,7 @@
         }
 
         .theme-list li {
-            padding: 0.75rem 0;
+            padding: 0.5rem 0;
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.95rem;
             display: flex;
@@ -529,21 +531,13 @@
         /* Combined themes layout */
         .themes-combined {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: start;
         }
 
         .theme-section {
-            padding-right: 2rem;
-        }
-
-        .theme-section:first-child {
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .theme-section:last-child {
-            padding-right: 0;
-            padding-left: 1rem;
+            padding: 0;
         }
 
         /* Theme 2 label styling - brighter green */
@@ -1115,18 +1109,7 @@
 
             .themes-combined {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .theme-section:first-child {
-                border-right: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding-right: 0;
-                padding-bottom: 2rem;
-            }
-
-            .theme-section:last-child {
-                padding-left: 0;
+                gap: 1.5rem;
             }
 
             .palette-grid {
