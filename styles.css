@@ -626,6 +626,10 @@
             gap: 1rem;
         }
 
+        .option-1 .colour-swatches {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         .swatch {
             height: 70px;
             border-radius: 12px;
