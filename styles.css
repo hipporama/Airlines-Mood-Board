@@ -520,6 +520,37 @@
             flex-shrink: 0;
         }
 
+        .theme-list-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Combined themes layout */
+        .themes-combined {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .theme-section {
+            padding-right: 2rem;
+        }
+
+        .theme-section:first-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-section:last-child {
+            padding-right: 0;
+            padding-left: 1rem;
+        }
+
+        /* Theme 2 label styling - brighter green */
+        .theme-2 .theme-label {
+            color: #3D9970;
+        }
+
         /* ============================================
            MOOD BOARD SECTIONS
            ============================================ */
@@ -1080,6 +1111,22 @@
             .content-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .themes-combined {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .theme-section:first-child {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-right: 0;
+                padding-bottom: 2rem;
+            }
+
+            .theme-section:last-child {
+                padding-left: 0;
             }
 
             .palette-grid {
