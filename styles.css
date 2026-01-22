@@ -150,6 +150,13 @@
             font-display: swap;
             src: url(fonts/merriweather-500.woff2) format('woff2');
         }
+        @font-face {
+            font-family: 'Petemoss';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/Petemoss-Regular.ttf) format('truetype');
+        }
 
         /* ============================================
            BASE STYLES
@@ -879,8 +886,8 @@
         /* Slide 3: Typeface Treatment */
         .typeface-showcase {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
         .typeface-card {
@@ -910,17 +917,32 @@
         }
 
         .typeface-sample .display-text {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 2rem;
-            color: var(--dark-blue);
-            margin-bottom: 1rem;
+            font-family: 'Gelasio', Georgia, serif;
+            font-size: 2.5rem;
+            color: #000;
+        }
+
+        .typeface-sample .subtext-text {
+            font-family: 'Petemoss', cursive;
+            font-size: 1.7rem;
+            font-style: normal;
+            color: #000;
+            line-height: 1.1;
         }
 
         .typeface-sample .body-text {
             font-family: 'Merriweather', Georgia, serif;
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: #000;
             line-height: 1.6;
+        }
+
+        .typeface-sample .font-name {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--dark-blue);
+            margin-top: 1rem;
         }
 
         .typeface-sample .placeholder-text {
