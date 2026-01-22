@@ -531,14 +531,14 @@
 
         .theme-list-columns {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: auto auto;
             gap: 1.5rem;
         }
 
         /* Combined themes layout */
         .themes-combined {
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: auto auto auto;
             gap: 2rem;
             align-items: start;
         }
